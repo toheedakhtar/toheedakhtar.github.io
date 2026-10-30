@@ -1,0 +1,21 @@
+.post-site-header, .post-footer { width: min(900px, calc(100% - 48px)); margin-inline: auto; }
+.post-site-header { display: flex; align-items: center; padding: 1rem 0; font-size: .8rem; }
+.post-site-header > a:not(.site-name) { margin-left: auto; }
+.blog-post { width: min(900px, calc(100% - 48px)); margin-inline: auto; padding: 3rem 0; }
+.post-header, .post-content { max-width: 680px; margin-inline: auto; }
+.post-header { padding-bottom: 2rem; }
+.post-label, .post-header time { font-size: .75rem; }
+.post-header h1 { margin: 0; font: 600 clamp(1.8rem, 4vw, 2.5rem)/1.2 var(--mono); }
+.post-description { margin: 1.5rem 0 .75rem; }
+.post-content { padding-top: 2rem; }
+.post-content h2 { margin: 2.5rem 0 1rem; font: 600 1.4rem/1.3 var(--mono); }
+.post-content h3 { margin-top: 2rem; font: 600 1.1rem/1.4 var(--mono); }
+.post-content p, .post-content li { margin-bottom: 1rem; }
+.post-content pre { max-width: 100%; overflow-x: auto; }
+.post-content code { font: .9em var(--mono); }
+.post-content img { display: block; max-width: 100%; height: auto; margin: 2rem auto; }
+.post-footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0 2rem; font-size: .75rem; }
+@media (max-width: 540px) {
+  .post-site-header, .post-footer, .blog-post { width: calc(100% - 32px); }
+  .blog-post { padding: 2.5rem 0; }
+}

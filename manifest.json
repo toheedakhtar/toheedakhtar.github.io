@@ -1,0 +1,19 @@
+{
+    "name":"Tohe²d Akhtar",
+    "short_name":"TA",
+    "start_url":"https://toheedakhtar.github.io/",
+    "display":"standalone",
+    "description":"Portfolio of Tohe²d Akhtar, an AI safety researcher studying metacognition and factual correctness in language models.",
+    "icons":[
+    {
+    "src":"assets/logo/192x192.png",                     
+    "sizes":"192x192",
+    "type":"image/png"
+    },
+    {
+    "src":"assets/logo/512x512.png",
+    "sizes":"512x512",
+    "type":"image/png"
+    }
+  ]
+}

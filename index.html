@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio of Tohe²d Akhtar, an AI safety researcher.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Tohe²d Akhtar</title>
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        if ('serviceWorker' in navigator) navigator.serviceWorker.register('js/serviceworker.js', { scope: './' });
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <a class="site-name" href="./" aria-label="Tohe squared d Akhtar home">Tohe<sup>2</sup>d</a>
+        <nav class="top-nav" aria-label="Portfolio sections">
+            <a href="#about" data-section="about" class="nav-item" aria-current="page">about</a>
+            <a href="#research" data-section="research" class="nav-item">research</a>
+            <a href="#work" data-section="work" class="nav-item">work</a>
+            <a href="#contact" data-section="contact" class="nav-item">contact</a>
+            <a href="#blog" data-section="blog" class="nav-item">blog</a>
+        </nav>
+    </header>
+    <div class="paper-container">
+        <main class="content-area" id="main" tabindex="-1">
+            <div class="page-meta"><span id="section-index">01 / 05</span></div>
+            <div id="content">
+                <p>AI researcher focused on AI safety. Select a section to explore.</p>
+            </div>
+        </main>
+    </div>
+    <footer class="site-footer"><span>Tohe<sup>2</sup>d Akhtar</span><a href="#top" id="back-to-top">back to top</a></footer>
+    <script src="js/blog-posts.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
