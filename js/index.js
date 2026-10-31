@@ -14,7 +14,7 @@ function showAbout() {
 
         <p>Always up for interesting discussions. <a href="#contact" data-section="contact">Reach out</a>.</p>
 
-        <img class="about-ship" src="https://cdn.pfps.gg/banners/3867-one-piece-gif.png" alt="One Piece pirate ship" width="640" height="360">
+        <img class="about-ship" src="assets/logo/about-ship.png" alt="One Piece pirate ship" width="640" height="360">
 
 
     `;
