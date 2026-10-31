@@ -9,6 +9,7 @@ img { max-width: 100%; }
 .skip-link:focus { transform: translateY(0); }
 .site-header, .paper-container, .site-footer { width: min(1080px, calc(100% - 48px)); margin-inline: auto; }
 .site-header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 1rem; padding: 12px 0; background: Canvas; }
+.site-brand { display: flex; align-items: center; gap: .6rem; white-space: nowrap; }
 .site-name { font-size: .95rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
 .site-name sup { font-size: .65em; }
 .top-nav { display: flex; gap: .8rem; margin-left: auto; }
