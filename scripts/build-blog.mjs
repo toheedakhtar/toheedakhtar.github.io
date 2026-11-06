@@ -30,7 +30,7 @@ function parsePost(source, filename) {
     if (!metadata[field]) throw new Error(`${filename}: missing ${field}`);
   }
 
-  const slug = basename(filename, '.md');
+  const slug = basename(filename).replace(/\.(?:md|html)$/, '');
   const date = new Date(`${metadata.date}T00:00:00Z`);
   if (Number.isNaN(date.valueOf())) throw new Error(`${filename}: invalid date`);
   if (metadata.external_url) {
@@ -72,7 +72,7 @@ function renderPost(post) {
   );
 }
 
-const filenames = (await readdir(contentDir)).filter(name => name.endsWith('.md'));
+const filenames = (await readdir(contentDir)).filter(name => /\.(?:md|html)$/.test(name));
 const posts = await Promise.all(filenames.map(async filename =>
   parsePost(await readFile(join(contentDir, filename), 'utf8'), filename)
 ));
