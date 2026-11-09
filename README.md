@@ -14,6 +14,7 @@ https://toheedakhtar.github.io/
    title: Post title
    description: One-sentence summary.
    date: 2026-09-29
+   updated: 2026-11-09
    label: research notes · interpretability
    ---
    ```
@@ -23,6 +24,8 @@ https://toheedakhtar.github.io/
 4. Commit both the Markdown source and generated files in `posts/` and `js/blog-posts.js`.
 
 The build script creates standalone static HTML pages and updates the portfolio's blog listing automatically.
+
+Set `updated` to the date you last revised a post, then rebuild. The last updated date appears on each local post and in the blog listing. If omitted, it defaults to the publication date; rebuilding alone does not change it.
 
 ### Linking an external post
 

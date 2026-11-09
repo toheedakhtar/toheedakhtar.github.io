@@ -103,6 +103,7 @@ function showBlog() {
         <li>
             <a href="${post.url}"${linkAttributes}>${post.title}</a>
             <p>${post.description}</p>
+            <div><time datetime="${post.updated}">Last updated: ${post.displayUpdated}</time></div>
             <time datetime="${post.date}">${post.displayDate} · ${post.label}${source}</time>
         </li>
     `;

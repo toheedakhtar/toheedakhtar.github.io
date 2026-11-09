@@ -33,6 +33,10 @@ function parsePost(source, filename) {
   const slug = basename(filename).replace(/\.(?:md|html)$/, '');
   const date = new Date(`${metadata.date}T00:00:00Z`);
   if (Number.isNaN(date.valueOf())) throw new Error(`${filename}: invalid date`);
+  const updated = new Date(`${metadata.updated || metadata.date}T00:00:00Z`);
+  if (Number.isNaN(updated.valueOf()) || updated < date) {
+    throw new Error(`${filename}: updated must be a valid date on or after publication`);
+  }
   if (metadata.external_url) {
     try { new URL(metadata.external_url); }
     catch { throw new Error(`${filename}: invalid external_url`); }
@@ -46,6 +50,10 @@ function parsePost(source, filename) {
     ...metadata,
     slug,
     date,
+    updated,
+    displayUpdated: new Intl.DateTimeFormat('en', {
+      year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
+    }).format(updated),
     displayDate: new Intl.DateTimeFormat('en', {
       year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
     }).format(date),
@@ -59,6 +67,8 @@ function renderPost(post) {
     description: escapeHtml(post.description),
     date: post.date.toISOString().slice(0, 10),
     displayDate: escapeHtml(post.displayDate),
+    updated: post.updated.toISOString().slice(0, 10),
+    displayUpdated: escapeHtml(post.displayUpdated),
     label: escapeHtml(post.label || 'field notes'),
     canonical: post.canonical_url
       ? `<link rel="canonical" href="${escapeHtml(post.canonical_url)}">`
@@ -83,8 +93,9 @@ await Promise.all(posts.filter(post => !post.external_url).map(post =>
   writeFile(join(outputDir, `${post.slug}.html`), renderPost(post))
 ));
 
-const listing = posts.map(({ title, description, date, displayDate, label, source, external_url, slug }) => ({
+const listing = posts.map(({ title, description, date, displayDate, updated, displayUpdated, label, source, external_url, slug }) => ({
   title, description, date: date.toISOString().slice(0, 10), displayDate,
+  updated: updated.toISOString().slice(0, 10), displayUpdated,
   label: label || 'field notes', source: source || '',
   external: Boolean(external_url), url: external_url || `posts/${slug}.html`
 }));
